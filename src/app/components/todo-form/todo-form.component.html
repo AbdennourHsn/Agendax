@@ -1,0 +1,143 @@
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8"><h2 mat-dialog-title>New task</h2></div>
+      <div class="col-4">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="colorDropdown"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <p *ngIf="color == ''">Select a Color</p>
+            <span
+              *ngIf="color == 'red'"
+              class="color-circle list color-red"
+            ></span>
+            <span
+              *ngIf="color == 'green'"
+              class="color-circle list color-green"
+            ></span>
+            <span
+              *ngIf="color == 'blue'"
+              class="color-circle list color-blue"
+            ></span>
+            <span
+              *ngIf="color == 'rose'"
+              class="color-circle list color-rose"
+            ></span>
+            <span
+              *ngIf="color == 'yellow'"
+              class="color-circle list color-yellow"
+            ></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="colorDropdown">
+            <a
+              (click)="OnSetColor('red')"
+              class="dropdown-item"
+              data-value="red"
+              ><span class="color-circle list color-red"></span>
+            </a>
+            <a
+              (click)="OnSetColor('green')"
+              class="dropdown-item"
+              data-value="green"
+              ><span class="color-circle list color-green"></span>
+            </a>
+            <a
+              (click)="OnSetColor('blue')"
+              class="dropdown-item"
+              data-value="blue"
+              ><span class="color-circle list color-blue"></span>
+            </a>
+            <a
+              (click)="OnSetColor('rose')"
+              class="dropdown-item"
+              data-value="blue"
+              ><span class="color-circle list color-rose"></span>
+            </a>
+            <a
+              (click)="OnSetColor('yellow')"
+              class="dropdown-item"
+              data-value="blue"
+              ><span class="color-circle list color-yellow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <input
+      class="form-control form-control-lg title"
+      type="text"
+      placeholder="Task Name"
+      [(ngModel)]="formData.Title"
+    />
+
+    <div class="form-group">
+      <textarea
+        class="form-control disc"
+        id="exampleFormControlTextarea1"
+        rows="6"
+        placeholder="description"
+        [(ngModel)]="formData.Description"
+      ></textarea>
+    </div>
+  </mat-dialog-content>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <input
+          [(ngModel)]="formData.DeadTime"
+          style="margin-top: 40px"
+          type="date"
+          class="form-control"
+          id="birthDate"
+          name="BirthDate"
+          placeholder="Date de naissance"
+          required
+        />
+      </div>
+      <div class="col">
+        <mat-label></mat-label>
+        <mat-form-field style="margin-top: 35px">
+          <mat-label>Projet</mat-label>
+          <mat-select [(ngModel)]="formData.projectId">
+            <mat-option>None</mat-option>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">1</mat-option>
+            <mat-option value="3">1</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field style="margin-top: 35px">
+          <mat-label>Progress</mat-label>
+          <mat-select [(ngModel)]="formData.state">
+            <mat-option value="1">To Do</mat-option>
+            <mat-option value="2">In Progress</mat-option>
+            <mat-option value="3">Done</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <a
+    (click)="SaveTask()"
+    class="btn btn-secondary btn-lg active"
+    role="button"
+    aria-pressed="true"
+  >
+    <i
+      class="material-icons"
+      style="font-size: 40px; vertical-align: middle; padding: 10px"
+      >save</i
+    >
+    Save</a
+  >
+</div>

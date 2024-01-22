@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: "Poppins", serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+h1 {
+  font-weight: 800;
+  margin: 1rem 0 0;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  list-style: none;
+
+  li {
+    display: flex;
+    width: 8rem;
+    height: 12rem;
+    margin: 0.25rem;
+    flex-flow: column;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 10px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: rgb(255, 252, 248);
+    time {
+      font-size: 2rem;
+      margin: 0 0 1rem 0;
+      font-weight: 500;
+    }
+  }
+  li:hover {
+    background-color: #f7ce7c;;
+    color: white;
+  }
+  .today {
+    time {
+      font-weight: 800;
+    }
+    background: #ffffff70;
+  }
+
+  .nbr{
+    font-family: 'Brush Script MT', cursive;
+  }
+}
